@@ -3842,6 +3842,17 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
+        case ABILITY_INNOCENT_CHARM:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                SaveBattlerAttacker(gBattlerAttacker);
+                gBattlerAttacker = battler;
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                SET_STATCHANGER(STAT_DEF, 1, TRUE);
+                BattleScriptPushCursorAndCallback(BattleScript_IntimidateActivates); //TODO fix activation scripts
+                effect++;
+            }
+            break;
         case ABILITY_SUPERSWEET_SYRUP:
             if (!gSpecialStatuses[battler].switchInAbilityDone
              && !gBattleStruct->partyState[GetBattlerSide(battler)][gBattlerPartyIndexes[battler]].supersweetSyrup)

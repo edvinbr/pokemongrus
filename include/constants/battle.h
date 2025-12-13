@@ -128,7 +128,7 @@ enum BattlerId
 #define STATUS1_TOXIC_POISON     (1 << 7)
 #define STATUS1_TOXIC_COUNTER    (1 << 8 | 1 << 9 | 1 << 10 | 1 << 11)
 #define STATUS1_TOXIC_TURN(num)  ((num) << 8)
-#define STATUS1_FROSTBITE        (1 << 12)
+#define STATUS1_FROSTBITE        (1 << 12) // TODO change frostbite to speed instead of spa
 #define STATUS1_PSN_ANY          (STATUS1_POISON | STATUS1_TOXIC_POISON)
 #define STATUS1_ANY              (STATUS1_SLEEP | STATUS1_POISON | STATUS1_BURN | STATUS1_FREEZE | STATUS1_PARALYSIS | STATUS1_TOXIC_POISON | STATUS1_FROSTBITE)
 
